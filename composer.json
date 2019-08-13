@@ -1,0 +1,19 @@
+{
+    "name": "fuchen2020\/express-info",
+    "description": "a express info sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fuchen",
+            "email": "czy_2020@126.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fuchen2020\\ExpressInfo\\": "./src/"
+        }
+    }
+}
