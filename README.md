@@ -1,6 +1,6 @@
 <h1 align="center"> express-info </h1>
 
-<p align="center"> a express info sdk.</p>
+<p align="center"> 基于快递100开放的快递物流轨迹信息查询</p>
 
 
 ## Installing
