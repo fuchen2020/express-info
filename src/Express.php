@@ -9,6 +9,7 @@
 namespace Fuchen2020\ExpressInfo;
 
 use Fuchen2020\ExpressInfo\Exceptions\HttpException;
+use Fuchen2020\ExpressInfo\Exceptions\InvalidArgumentException;
 use GuzzleHttp\Client;
 
 class Express
@@ -50,11 +51,16 @@ class Express
      * @param string $format 返回格式
      * @return mixed|string
      * @throws HttpException
+     * @throws InvalidArgumentException
      */
     public function getExpressInfo(string $expressCode, string $expressNo,string $phone = '',string $format = 'json')
     {
 
         $url = 'http://poll.kuaidi100.com/poll/query.do';
+
+        if (!\in_array(\strtolower($format), ['xml', 'json'])) {
+            throw new InvalidArgumentException('Invalid response format: '.$format);
+        }
 
         $param = json_encode([
             'com' =>$expressCode,			//快递公司编码
@@ -80,6 +86,8 @@ class Express
             return 'json' === $format ? \json_decode($response, true) : $response;
 
         }catch (\Exception $exception){
+
+
             throw new HttpException($exception->getMessage(), $exception->getCode(), $exception);
         }
 

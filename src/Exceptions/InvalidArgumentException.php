@@ -1,0 +1,15 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * author: _Dust_
+ * Date: 2019-08-13
+ * Time: 17:06
+ */
+
+namespace Fuchen2020\ExpressInfo\Exceptions;
+
+
+class InvalidArgumentException extends \Exception
+{
+
+}
