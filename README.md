@@ -10,8 +10,18 @@ $ composer require fuchen2020/express-info -vvv
 ```
 
 ## Usage
+```php
+require __DIR__ .'/vendor/autoload.php';
 
-TODO
+use Fuchen2020\ExpressInfo\Express;
+//快递100开放授权 API Key
+$key = '*****************';//客户授权key
+$customer = '*****************';//查询公司编号
+$exp = new Express($key,$customer);
+echo "获取实时快递轨迹：\n";
+$response = $exp->getExpressInfo('zhongtong','77110160482518');
+echo json_encode($response, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+```
 
 ## Contributing
 
